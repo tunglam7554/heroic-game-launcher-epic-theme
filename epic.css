@@ -349,6 +349,7 @@ body.epic .gameCard.justPlayed .justPlayedImg,
 body.epic .gameCard .gameImg {
   border-radius: 4px;
   image-rendering: -webkit-optimize-contrast;
+  background-color: var(--navbar-background);
 }
 
 body.epic .gameCard.justPlayed:hover .justPlayedImg,
