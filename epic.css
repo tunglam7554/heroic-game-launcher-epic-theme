@@ -4,6 +4,7 @@ body.epic {
     * (not that heroic folks did a bad job naming these!)
     */
   --text: rgba(255, 255, 255, 0.5);
+  --text-default: var(--text);
   --text-white: #fff;
   --custom-accent: #0078f2;
   --custom-accent-hover: #0074e4;
@@ -19,7 +20,7 @@ body.epic {
   --box-shadow: 0 0 0 1px var(--box-shadow-color);
   --secondary-box-shadow: var(--box-shadow-color);
   --border-radius: 4px;
-  --accent: var(--text);
+  --accent: var(--text-white);
   --accent-overlay: #fefefe;
   --navbar-accent: var(--text);
   --divider: var(--secondary-box-shadow-color);
@@ -168,6 +169,7 @@ body.epic .SearchBar .clearSearchButton {
 
 body.epic .SearchBar .autoComplete {
   padding: var(--space-md) var(--space-xs);
+  overflow: hidden;
 }
 
 body.epic .SearchBar .autoComplete li {
@@ -205,6 +207,7 @@ body.epic .Sidebar__item.SidebarLinks__subItem {
 }
 
 body.epic .Sidebar__item.active,
+body.epic .Sidebar__item.active .Sidebar__itemIcon,
 body.epic .Sidebar__item.SidebarLinks__subItem.active {
   /* background-color: var(--custom-accent-hover); */
   background-color: transparent;
@@ -214,6 +217,7 @@ body.epic .Sidebar__item.SidebarLinks__subItem.active {
 
 body.epic .Sidebar__item .Sidebar__itemIcon {
   margin-inline-end: 5px;
+  color: var(--text) !important;
 }
 
 body.epic .Sidebar__item:hover,
@@ -338,6 +342,10 @@ body.epic .gameCard {
   box-shadow: none;
   background: none;
   aspect-ratio: 173/300;
+}
+
+body.epic .gameCard .gameCardStatus {
+  display: none;
 }
 
 body.epic .gameCard:hover,
@@ -586,7 +594,8 @@ body.epic .gameConfigContainer .extraInfoWrapper .tabContent.infoTab>div>* .trun
 
 /* Game List */
 body.epic .gameListItem,
-body.epic .downloadManagerListItem {
+body.epic .downloadManagerListItem,
+body.epic .wineManagerListItem {
   border-bottom: var(--border);
   border-radius: var(--border-radius);
   font-weight: 300;
@@ -595,8 +604,14 @@ body.epic .downloadManagerListItem {
   margin-bottom: 0;
 }
 
+body.epic main.content h1,
+body.epic main.content h2,
+body.epic main.content h3,
+body.epic main.content h4,
+body.epic main.content h5,
 body.epic .gameListHeader,
 body.epic .gameListItem .installed,
+body.epic .wineManagerListItem .wineManagerTitleList,
 body.epic .gameListItem.installed:not(.notAvailable) span {
   color: var(--text-white);
   font-weight: 500;
