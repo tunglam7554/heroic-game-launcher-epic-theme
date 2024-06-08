@@ -1,0 +1,635 @@
+body.epic {
+  /*
+    * custom variables to be more expressive about what the colors actually set.
+    * (not that heroic folks did a bad job naming these!)
+    */
+  --text: rgba(255, 255, 255, 0.5);
+  --text-white: #fff;
+  --custom-accent: #0078f2;
+  --custom-accent-hover: #0074e4;
+  --background: #121212;
+  --secondary-background: #202020;
+  --button-background: #363636;
+  --control-background: #262626;
+  --control-background-hover: #363636;
+  --button-text: white;
+  --box-shadow-color: #1b1b1b;
+  --secondary-box-shadow-color: #202020;
+  --tertiary-box-shadow-color: #5a5a59;
+  --box-shadow: 0 0 0 1px var(--box-shadow-color);
+  --secondary-box-shadow: var(--box-shadow-color);
+  --border-radius: 4px;
+  --accent: var(--text);
+  --accent-overlay: #fefefe;
+  --navbar-accent: var(--text);
+  --divider: var(--secondary-box-shadow-color);
+  --body-background: var(--background);
+  --background-darker: var(--background);
+  --current-background: var(--background);
+  --navbar-background: #202020;
+  --navbar-active-background: var(--custom-accent);
+  --gradient-body-background: var(--background);
+  --input-background: var(--secondary-background);
+  --modal-background: var(--background);
+  --modal-border: var(--box-shadow-color);
+  --download-button: #0074e4;
+  --download-button-overlay: #5d6ce6;
+  --success: #a9d34f;
+  --success-hover: var(--custom-accent-hover);
+  --primary: var(--custom-accent);
+  --primary-hover: var(--custom-accent-hover);
+  --danger: #ff0000;
+  --text-title: #00ddff;
+  --icons-background: var(--secondary-background);
+  --osk-background: var(--background);
+  --osk-button-background: var(--control-background);
+  --osk-button-border: #ffffffff;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border: 1px solid var(--border-color);
+  --neutral-05: #fff;
+  --neutral-06: rgba(255, 255, 255, 0.8);
+  --base-06: var(--border-color);
+  --primary-font-family: Inter, sans-serif;
+  font-family: var(--primary-font-family) !important;
+}
+
+/* Input */
+body.epic .libraryHeader {
+  top: 72px;
+}
+
+
+body.epic .Field>input,
+body.epic select {
+  box-shadow: none !important;
+}
+
+body.epic .SearchBar,
+body.epic .Field>input,
+body.epic select,
+body.epic .progressHeader,
+body.epic .dmItemList,
+body.epic .svg-button {
+  border-radius: var(--border-radius);
+}
+
+body.epic .toggle,
+body.epic .gameConfigContainer .titleWrapper .settings-icon {
+  color: var(--button-text) !important;
+  background: var(--control-background) !important;
+  box-shadow: none !important;
+}
+
+body.epic .selectStyle,
+body.epic .selectFieldWrapper select {
+  box-shadow: none !important;
+  border-radius: var(--border-radius);
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-secondary) 50%), linear-gradient(135deg, var(--text-secondary) 50%, transparent 50%);
+}
+
+/* FormControl */
+
+body.epic *:has(>.FormControl) {
+  height: 100%;
+}
+
+body.epic .FormControl {
+  height: 100%;
+  background: var(--control-background);
+  color: var(--button-text);
+  border-radius: var(--border-radius);
+  box-shadow: none;
+}
+
+body.epic .FormControl .FormControl__button:first-child {
+  border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
+}
+
+body.epic .FormControl .FormControl__button:last-child {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
+}
+
+body.epic .FormControl__button:hover,
+body.epic .FormControl__button.active {
+  background: var(--control-background-hover) !important;
+  color: var(--text-white);
+}
+
+body.epic .ActionIcons .FormControl__button>svg {
+  margin: auto;
+}
+
+body.epic *:not(.submenu)>.button,
+body.epic .sideloadGameButton,
+body.epic .titleWrapper .svg-button,
+body.epic .game-actions {
+  background: var(--control-background);
+  color: var(--button-text);
+  border-radius: var(--border-radius);
+  box-shadow: none !important;
+}
+
+body.epic *:not(.submenu).button:hover,
+body.epic .sideloadGameButton:hover,
+body.epic .titleWrapper .svg-button:hover,
+body.epic .titleWrapper .settings-icon:hover {
+  background: var(--control-background-hover) !important;
+  color: var(--button-text);
+}
+
+/* SearchBar */
+body.epic .SearchBar {
+  box-shadow: var(--box-shadow) !important;
+}
+
+body.epic .SearchBar {
+  border-radius: 15px !important;
+  box-shadow: none !important;
+  height: 40px !important;
+  display: flex;
+  align-items: center;
+}
+
+body.epic .SearchBar .searchButton {
+  padding: 0;
+  padding-left: 4px;
+  color: rgba(245, 245, 245, 0.6);
+  display: flex;
+  align-items: center;
+}
+
+body.epic .SearchBar .searchBarInput {
+  padding: 0 4px;
+}
+
+body.epic .SearchBar .clearSearchButton {
+  padding-inline-end: 4px;
+}
+
+body.epic .SearchBar .autoComplete {
+  padding: var(--space-md) var(--space-xs);
+}
+
+body.epic .SearchBar .autoComplete li {
+  padding: 6px;
+  border-radius: var(--border-radius);
+  color: var(--text-white);
+}
+
+body.epic .SearchBar .autoComplete li:hover {
+  background-color: var(--control-background-hover);
+}
+
+/* Sidebar */
+
+body.epic .Sidebar {
+  box-shadow: none;
+  padding: 10px;
+  background-color: var(--background) !important;
+  /* background-color: transparent !important; */
+  border-right: var(--border);
+}
+
+body.epic .Sidebar__item {
+  background-color: transparent;
+  border-radius: var(--border-radius);
+  height: 46px;
+  margin: 2px 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+body.epic .Sidebar__item.SidebarLinks__subItem {
+  height: 36px;
+}
+
+body.epic .Sidebar__item.active,
+body.epic .Sidebar__item.SidebarLinks__subItem.active {
+  /* background-color: var(--custom-accent-hover); */
+  background-color: transparent;
+  color: var(--text-white) !important;
+  font-weight: 700 !important;
+}
+
+body.epic .Sidebar__item .Sidebar__itemIcon {
+  margin-inline-end: 5px;
+}
+
+body.epic .Sidebar__item:hover,
+body.epic .Sidebar__item.SidebarLinks__subItem:hover,
+body.epic .Sidebar__item:hover .Sidebar__itemIcon {
+  background-color: var(--control-background);
+  color: var(--text-white) !important;
+}
+
+body.epic .Sidebar__item.SidebarLinks__subItem,
+body.epic .Sidebar__item.SidebarLinks__subItem:hover {
+  padding-block: 0;
+  padding-inline: 0;
+  align-items: center;
+  padding: 10px;
+}
+
+body.epic .SidebarSubmenu {
+  padding: 5px;
+}
+
+body.epic .divider {
+  /* height: 1px;
+  margin: 0 !important;
+  background: var(--border-color); */
+  height: 0;
+  display: none;
+}
+
+/*
+* The filters and simmilar stuff in the Library thingie
+*/
+body.epic .storeFilter {
+  margin: auto 24px;
+}
+
+body.epic .Header__filters {
+  height: 100%;
+  max-height: 35px;
+  align-items: center;
+}
+
+body.epic .platformFilters {
+  margin: 0;
+}
+
+body.epic .Header__filters>div>.selectStyle {
+  height: 35px !important;
+}
+
+
+/* Dropdown */
+body.epic .contextMenu>.MuiPaper-root,
+body.epic .gameConfigContainer .game-actions:focus-within .gameTools,
+body.epic .gameConfigContainer .game-actions:hover .gameTools,
+body.epic .dropdown {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow) !important;
+  gap: 0.25rem;
+  padding: 10px !important;
+  background-color: var(--navbar-background);
+}
+
+body.epic .dropdown .button {
+  width: 100%;
+  padding: 10px;
+  margin-inline-start: 0;
+}
+
+body.epic .toggleSwitchWrapper {
+  padding: 4px 6px;
+  /* height: 36px; */
+  border-radius: var(--border-radius);
+  color: var(--text-white) !important;
+}
+
+body.epic .toggleSwitchWrapper:hover {
+  background-color: var(--control-background-hover);
+  color: var(--text-white) !important;
+}
+
+body.epic .toggleSwitchWrapper::before {
+  border: 1px solid var(--text-white);
+  margin-inline-start: 0;
+}
+
+body.epic .hiddenCheckbox:checked+.toggleSwitchWrapper::before {
+  background-color: var(--text-white);
+}
+
+body.epic .libraryFilters,
+body.epic .hiddenCheckbox:checked+.toggleSwitchWrapper::before,
+body.epic .categoriesFilter .dropdown .toggleSwitchWrapper &::before {
+  color: transparent;
+}
+
+body.epic hr {
+  border-bottom: var(--border);
+  height: 0;
+  opacity: 0.15;
+  width: 90% !important;
+  /* display: none; */
+}
+
+body.epic hr:last-of-type {
+  opacity: 0;
+}
+
+body.epic .content .Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* GameCard */
+body.epic .gameCard:hover .store-icon {
+  display: none;
+}
+
+body.epic .gameCard {
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  aspect-ratio: 173/300;
+}
+
+body.epic .gameCard:hover,
+body.epic .gameCard:focus-within {
+  transform: none !important;
+}
+
+body.epic .gameCard.justPlayed .justPlayedImg,
+body.epic .gameCard .gameImg {
+  border-radius: 4px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+body.epic .gameCard.justPlayed:hover .justPlayedImg,
+body.epic .gameCard:hover .gameImg {
+  filter: contrast(65%);
+}
+
+body.epic .gameCard .gameTitle {
+  transform: none !important;
+  background: transparent;
+  position: relative;
+  margin-top: 2px;
+  display: block !important;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--text-white);
+}
+
+body.epic .gameCard .gameTitle>span {
+  display: -webkit-box;
+  line-clamp: 2;
+  overflow: hidden;
+  word-break: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+body.epic .gameCard>.icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background: none !important;
+  padding: 6px;
+}
+
+body.epic .gameCard:hover>.icons {
+  display: grid;
+}
+
+body.epic .gameCard>.icons path {
+  fill: #fff !important;
+}
+
+body.epic .gameCard>.icons .playIcon circle {
+  fill: var(--custom-accent)
+}
+
+body.epic .gameCard>.icons .downIcon circle {
+  fill: var(--success)
+}
+
+/* Others */
+body.epic .dmItemList {
+  border: none;
+}
+
+body.epic .downloadManagerListItem {
+  border-top: none !important;
+  box-shadow: 0 -1px 0 0 var(--tertiary-box-shadow-color);
+  margin: 0;
+  padding: var(--space-md) var(--space-sm-fixed);
+}
+
+body.epic .numberOfgames {
+  background: none;
+}
+
+body.epic .WebviewControls {
+  border-bottom: none;
+  background-color: var(--background);
+}
+
+/* GameDetail */
+body.epic .gameConfigContainer {
+  gap: 10px !important;
+  padding-top: 16px !important;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper,
+body.epic .gameConfigContainer .extraInfoWrapper {
+  row-gap: 0 !important;
+}
+
+
+body.epic .gameConfigContainer .mainInfoWrapper {
+  width: calc(100% - 132px) !important;
+  flex-basis: auto !important;
+  max-width: none !important;
+}
+
+
+body.epic .gameConfigContainer .game-actions .gameTools .link {
+  padding: 8px !important;
+  border-radius: var(--border-radius);
+  background-color: transparent !important;
+}
+
+body.epic .gameConfigContainer .game-actions .gameTools .link:hover {
+  background-color: var(--control-background-hover) !important;
+}
+
+body.epic .gameConfigContainer .backgroundImage {
+  display: none;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper>button,
+body.epic .gameConfigContainer .mainInfoWrapper .backButton,
+body.epic .gameConfigContainer .mainInfoWrapper .game-actions,
+body.epic .gameConfigContainer .mainInfoWrapper .game-actions .toggle,
+body.epic .gameConfigContainer .extraInfoWrapper .tabs>button {
+  background-color: transparent !important;
+  border-radius: var(--border-radius) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper>button:hover,
+body.epic .gameConfigContainer .mainInfoWrapper .backButton:hover,
+body.epic .gameConfigContainer .mainInfoWrapper .game-actions:hover,
+body.epic .gameConfigContainer .mainInfoWrapper .game-actions .toggle:hover,
+body.epic .gameConfigContainer .extraInfoWrapper .tabs>button:hover {
+  background-color: var(--control-background-hover) !important;
+  border-radius: var(--border-radius) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+body.epic .gameConfigContainer .mainInfo,
+body.epic .gameConfigContainer .tabContent {
+  outline: none !important;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo {
+  padding: 15px 5px min(5vh, 25px) min(4vw, 70px) !important;
+}
+
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo .gamePicture {
+  position: relative !important;
+  margin-bottom: 0 !important;
+  border-radius: var(--border-radius) !important;
+  width: 100%;
+  overflow: visible !important;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo .gamePicture .gameImg {
+  border-radius: var(--border-radius);
+  height: max-content !important;
+  aspect-ratio: 2 !important;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo .gamePicture .gameLogo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 50%;
+  bottom: 0;
+  margin: auto;
+  transform: none;
+}
+
+body.epic .gameConfigContainer .mainInfo:after,
+body.epic .gameConfigContainer .tabContent:after,
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo .gamePicture:after,
+body.epic .gamePicture:after {
+  background: transparent !important;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo .store-icon {
+  left: 2.5rem !important;
+  top: 0.75rem !important;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo h1 {
+  margin-top: 20px;
+  font-size: 50px !important;
+  line-height: 55px !important;
+  letter-spacing: -1px !important;
+  font-weight: normal;
+  color: rgb(245, 245, 245);
+}
+
+body.epic .summary {
+  margin: 16px 0 !important;
+}
+
+body.epic .developer {
+  font-size: var(--text-md);
+  font-weight: 500;
+}
+
+body.epic .timeContainerLabel,
+body.epic .releaseDate,
+body.epic .gameStatus p {
+  margin: 0 !important;
+  color: var(--text);
+  font-weight: 300;
+  font-size: var(--text-sm);
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo .buttons .button {
+  max-height: 50px;
+  height: 50px;
+  width: 320px;
+  font-weight: 300;
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo .buttons .button.is-success {
+  background-color: var(--download-button);
+}
+
+body.epic .gameConfigContainer .mainInfoWrapper .mainInfo .buttons .button.is-success:hover {
+  background-color: var(--download-button-overlay) !important;
+}
+
+body.epic .gameConfigContainer .extraInfoWrapper .tabContent.infoTab>div>div {
+  color: var(--text-white);
+  font-weight: 300;
+}
+
+body.epic .gameConfigContainer .extraInfoWrapper .tabContent.infoTab>div>div>b {
+  color: var(--text) !important;
+  font-weight: 300 !important;
+}
+
+body.epic .gameConfigContainer .extraInfoWrapper .tabContent.infoTab>div>* .truncatedPath {
+  display: -webkit-box;
+  white-space: wrap !important;
+  word-break: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Game List */
+body.epic .gameListItem,
+body.epic .downloadManagerListItem {
+  border-bottom: var(--border);
+  border-radius: var(--border-radius);
+  font-weight: 300;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0;
+}
+
+body.epic .gameListHeader,
+body.epic .gameListItem .installed,
+body.epic .gameListItem.installed:not(.notAvailable) span {
+  color: var(--text-white);
+  font-weight: 500;
+}
+
+body.epic .downloadManagerListItem .titleSize {
+  color: var(--text-white);
+}
+
+body.epic .gameListItem .gameTitle,
+body.epic .downloadManagerListItem .titleSize>span {
+  color: var(--text);
+  font-weight: 300;
+}
+
+body.epic .gameListItem:hover {
+  background-color: var(--control-background-hover);
+  color: var(--text-white) !important;
+}
+
+body.epic .contextMenu>.MuiPaper-root>.MuiMenu-list {
+  color: var(--text-white) !important;
+}
+
+body.epic .contextMenu>.MuiPaper-root>.MuiMenu-list>.MuiMenuItem-root:hover {
+  background-color: var(--control-background-hover);
+  border-radius: var(--border-radius);
+}
+
+body.epic .gameCard.justPlayed {
+  aspect-ratio: 275 / 205 !important;
+}
+
+body.epic .downloadManagerListItem {
+  box-shadow: none;
+  border-bottom: var(--border);
+}
