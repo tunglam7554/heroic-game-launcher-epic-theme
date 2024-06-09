@@ -399,16 +399,20 @@ body.epic .gameCard:hover>.icons {
   display: grid;
 }
 
-body.epic .gameCard>.icons path {
+body.epic .icons path {
   fill: #fff !important;
 }
 
-body.epic .gameCard>.icons .playIcon circle {
-  fill: var(--custom-accent)
+body.epic .icons .playIcon circle,
+body.epic .icons .downIcon circle,
+body.epic .icons .playIcon:hover path,
+body.epic .icons .downIcon:hover path {
+  fill: transparent;
 }
 
-body.epic .gameCard>.icons .downIcon circle {
-  fill: var(--success)
+body.epic .icons .playIcon:hover circle,
+body.epic .icons .downIcon:hover circle {
+  fill: var(--success);
 }
 
 /* Others */
@@ -603,6 +607,12 @@ body.epic .wineManagerListItem {
   padding-right: 10px;
   margin-bottom: 0;
 }
+
+/* body.epic .gameListItem .gameImg,
+body.epic .gameListItem .gameLogo {
+  display: block;
+} */
+
 
 body.epic main.content h1,
 body.epic main.content h2,
